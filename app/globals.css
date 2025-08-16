@@ -3,15 +3,9 @@
 @theme {
   --color-white: #fff;
   --color-black: #000;
-  --color-grey-5: #161616;
-  --color-grey-10: #191919;
-  --color-grey-15: #262626;
-  --color-grey-20: #333333;
-  --color-grey-30: #4C4C4D;
-  --color-grey-35: #59595A;
-  --color-grey-40: #656567;
-  --color-grey-60: #98989A;
-  --color-grey-90: #E6E6E6;
+  --color-green: #B1FF33;
+  --color-red: #A20021;
+  --color-gray: #BDBEC0;
 }
 
 @utility flex-center {
@@ -22,4 +16,7 @@
 }
 @utility light-input {
   @apply bg-gray-200/85 text-black/95 placeholder:text-black/95;
+}
+@utility test-button {
+  @apply bg-green-200/90 text-2xl px-9 py-2 rounded-lg border-[2px] border-black/15 cursor-pointer
 }
