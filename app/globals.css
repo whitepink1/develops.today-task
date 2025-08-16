@@ -6,6 +6,7 @@
   --color-green: #B1FF33;
   --color-red: #A20021;
   --color-gray: #BDBEC0;
+  --color-gray-10: #aaa;
 }
 
 @utility flex-center {
