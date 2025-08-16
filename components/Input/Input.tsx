@@ -4,8 +4,8 @@ import Image from "next/image";
 
 export type InputProps = {
   type?: "text" | "email" |"number" | "password";
-  value?: string;
-  onChange?: (value: string) => void; 
+  value?: string | number;
+  onChange?: (value: string | number) => void; 
   clearable?: boolean;
   placeholder?: string;
   darkMode?: boolean;
@@ -21,7 +21,7 @@ export const Input = ({
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const handlePassword = () => {
+  const togglePassword = () => {
     setShowPassword(!showPassword);
   };
 
@@ -29,33 +29,29 @@ export const Input = ({
     onChange('');
   }
   return (
-    <div className={`w-[350px] h-[120px] flex-center border-[1px] border-black/50 rounded-xl ${darkMode ? 'bg-black/85' : 'bg-white'}`}>
+    <div className="w-fit h-fit relative">
       <input 
-        type={type}
+        type={type != "password" ? type : showPassword ? "text" : "password"}
         value={value}
+        autoFocus
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className={`relative w-[300px] h-[55px] ${darkMode ? 'bg-white/50 text-white placeholder:text-white' : 'bg-gray-200/85 text-black/95 placeholder:text-black/95'} px-3 rounded-lg focus:outline-0`}
+        className={`w-[300px] h-[55px] ${darkMode ? 'dark-input' : 'light-input'} ${((clearable && type != 'password') || (type === "password")) ? 'pl-3 pr-11' : 'px-3'} rounded-lg focus:outline-0`}
         />
-      {type === "password" && 
-        <button onClick={handlePassword}>
-          <Image 
-            src={`${showPassword ? "/icons/eye-slash-filled.svg" : "/icons/eye-filled.svg"}`}
-            width={24}
-            height={24}
-            className={`absolute bottom-0 right-0 z-10`}
-            alt="Hide/Show password"/>
+      {(type === "password" || clearable) && (
+        <button 
+          onClick={type === 'password' ? togglePassword : handleClear}
+          className={`flex-center w-[28px] h-[28px] absolute right-1 top-1/2 -translate-y-1/2 cursor-pointer ${(type != "password" && !value) && 'hidden'} ${darkMode ? "" : 'bg-black/55 rounded-lg'}`}>
+            <Image 
+              src={`${
+                type === "password" 
+                ? (showPassword ? "/icons/eye-slash-filled.svg" : "/icons/eye-filled.svg")
+                : "/icons/trash-filled.svg"}`}
+              width={24}
+              height={24}
+              alt={type === "password" ? "Hide/Show password" : "Clear input"}/>
         </button>
-      }
-      {clearable && <button className={`${value ? 'block' : 'hidden'}`} onClick={handleClear}>
-          <Image 
-            src={`${showPassword ? "/icons/eye-slash-filled.svg" : "/icons/eye-filled.svg"}`}
-            width={24}
-            height={24}
-            className={`absolute bottom-0 right-0 z-10`}
-            alt="Clear the input"/>
-        </button>
-      }
+      )}
     </div>
   );
 };
