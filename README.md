@@ -9,10 +9,15 @@ This project was built to demonstrate Storybook UI components in React, NextJS w
 The Input component supports multiple types, like text and password, with a clear button and password toggle.
 
 ![Text Input](./storybook-screenshot/text-input-clearable-on.png)
+<br/>
 Text input with ``` clearable=true ```
+
 ![Email Input Clearable Off](./storybook-screenshot/email-input-clearable-off.png)
+<br/>
 Email input with ``` clearable=false ```
+
 ![Password Input Dark](./storybook-screenshot/password-input-dark.png)
+<br/>
 Password input with dark theme
 
 ---
