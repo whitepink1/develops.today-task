@@ -21,3 +21,11 @@
 @utility test-button {
   @apply bg-green-200/90 text-2xl px-9 py-2 rounded-lg border-[2px] border-black/15 cursor-pointer
 }
+
+@utility form-button {
+  @apply w-[300px] font-semibold bg-black/20 p-3 rounded-lg shadow-lg hover:shadow-xl hover:scale-102 active:scale-98 active:shadow-md
+}
+
+@utility form-submit {
+  @apply flex flex-col justify-center items-center gap-2 w-fit
+}

@@ -20,6 +20,15 @@ Email input with ``` clearable=false ```
 <br/>
 Password input with dark theme
 
+![Sign Up Form](./storybook-screenshot/signup-form.png)
+<br/>
+Empty sign up form.
+
+![Sign Up Form](./storybook-screenshot/signup-form-success.png)
+<br/>
+After successfully sign up.
+
+
 ---
  
 ### 📌 Toast

@@ -1,8 +1,9 @@
 import { AnimatePresence, motion } from "motion/react";
 import { easeOut } from "framer-motion";
 import { useState } from "react";
+import { SubMenu } from "./SubMenu";
 
-type MenuItem = {
+export type MenuItem = {
     title?: string;
     subMenu?: MenuItem[];
 }
@@ -11,7 +12,7 @@ export type SidebarProps = {
     items?: MenuItem[];
 }
 
-export const SidebarMenu = ({items}: SidebarProps) => {
+export const SidebarMenu = ({items = []}: SidebarProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isSubMenu, setIsSubmenu] = useState<string>("");
     const slideVariant = (duration: string) => {
@@ -55,21 +56,7 @@ export const SidebarMenu = ({items}: SidebarProps) => {
                                         className="cursor-pointer">
                                         {item.title}
                                     </button>
-                                    <AnimatePresence>
-                                        {(String(id) === isSubMenu && item.subMenu) && (
-                                            <motion.ul 
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{height: "auto", opacity: 1}}
-                                                exit={{height: 0, opacity: 0 }}
-                                                transition={{duration: 0.3, ease: easeOut}}>
-                                                {item.subMenu.map((subItem) => (
-                                                    <li key={subItem.title} className="ml-4 h-fit">
-                                                        - {subItem.title}
-                                                    </li>
-                                                ))}
-                                            </motion.ul>
-                                        )}
-                                    </AnimatePresence>
+                                    <SubMenu id={id} isSubMenu={isSubMenu} item={item}/>
                                 </li>                                
                             ))}
                         </motion.ul>
