@@ -16,21 +16,21 @@ Email input with ``` clearable=false ```
 Password input with dark theme
 
 ---
-
+ 
 ### 📌 Toast
 
 The Toast component shows notifications with animations and different styles.
 
 ![Success Toast](./storybook-screenshot/success-toast.png)
-
+<br/>
 Success toast with fade animation
 
 ![Warning Toast](./storybook-screenshot/warning-toast.png)
-
+<br/>
 Warning toast with slide animation
 
 ![Info Toast](./storybook-screenshot/info-toast.png)
-
+<br/>
 Info toast with large message
 
 ---
@@ -40,15 +40,15 @@ Info toast with large message
 The SidebarMenu has nested items with a sliding animation.
 
 ![Open button](./storybook-screenshot/default_state_sidebar.png)
-
+<br/>
 Default state of Sidemenu bar.
 
 ![One level Sidebar](./storybook-screenshot/one-level-sidebar.png)
-
+<br/>
 Sidebar menu with one level nest.
 
 ![Two level Sidebar](./storybook-screenshot/two-level-sidebar.png)
-
+<br/>
 Sidebar menu with two level nest.
 
 ---
