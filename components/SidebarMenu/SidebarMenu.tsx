@@ -21,7 +21,7 @@ export const SidebarMenu = ({items}: SidebarProps) => {
         transition: { duration: Number(duration), ease: easeOut }}
     };
     return(
-            <div className="">
+            <div className="w-[250px]">
                 <motion.button
                     animate={{width: isOpen ? 250 : 100}}
                     transition={{duration: 0.6, ease: easeOut}}

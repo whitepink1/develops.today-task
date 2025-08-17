@@ -40,7 +40,7 @@ export const Toast = ({
 
     return(
         <>
-            <button onClick={() => setIsVisible(true)} className="test-button">Test</button>
+            {/* <button onClick={() => setIsVisible(true)} className="test-button">Test</button> */}
             <AnimatePresence>
                 {isVisible && 
                 <motion.div 
