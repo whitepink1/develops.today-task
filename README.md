@@ -73,7 +73,7 @@ Sidebar menu with two level nest.
 
 ```bash
 git clone https://github.com/whitepink1/develops.today-task.git
-cd storybook-task
+cd develops.today-task
 ```
 
 - **2. Install dependencies**
